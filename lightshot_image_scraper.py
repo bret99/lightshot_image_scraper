@@ -108,5 +108,5 @@ for link in links_list:
     print('\033[1;93mhttps://prnt.sc/{}\033[1;00m'.format(link))
 
 print(
-    '\nYou will find scan results in \033[1;94mlightshot_scan_results.txt\033[1;00m\n'
+    '\nIf SUCCESSFUL you will find scan results in \033[1;94mlightshot_scan_results.txt\033[1;00m\n'
 )
