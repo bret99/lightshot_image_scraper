@@ -101,6 +101,8 @@ if user_input_lang not in lang_list:
 else:
     user_input_secrets()
     main()
+    
+driver.quit()    
 
 print('Your links are:\n')
 
