@@ -54,7 +54,7 @@ def main():
 
     count = 0
 
-    while count <= user_input_count:
+    while count < user_input_count:
         links_list.append(generate_alphanum_random_string())
         count = count + 1
 
