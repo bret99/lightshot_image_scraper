@@ -39,8 +39,8 @@ def user_input_secrets():
 
 
 def generate_alphanum_random_string():
-    letters_and_digits = string.ascii_letters + string.digits
-    rand_string = ''.join(random.sample(letters_and_digits, 6)).lower()
+    rand_string = ''.join(
+        random.sample('abcdefghijklmnopqrstuvwxyz123456789', 6))
     return rand_string
 
 
@@ -116,4 +116,4 @@ print(
     '\nIf SUCCESSFUL you will find scan results in \033[1;94mlightshot_scan_results.txt\033[1;00m\n'
 )
 print('Elapsed time is: \033[1;92m{}\033[1;00m seconds\n'.format(
-    int(time.time() - start)))
+    format((time.time() - start), '.2f')))
