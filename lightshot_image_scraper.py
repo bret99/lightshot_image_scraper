@@ -44,9 +44,6 @@ def generate_alphanum_random_string():
     return rand_string
 
 
-start = time.time()
-
-
 def main():
     try:
         user_input_count = int(
@@ -55,6 +52,7 @@ def main():
             ))
     except:
         sys.exit('\033[1;91m\nWrong input!\nExiting..\033[1;00m\n')
+    start = time.time()
 
     count = 0
 
@@ -99,6 +97,12 @@ def main():
     else:
         pass
 
+    print(
+        '\nIf SUCCESSFUL you will find scan results in \033[1;94mlightshot_scan_results.txt\033[1;00m\n'
+    )
+    print('Elapsed time is: \033[1;92m{}\033[1;00m seconds\n'.format(
+        format((time.time() - start), '.2f')))
+
 
 user_input_lang = input(
     'Enter the language to find secrets (\033[1;94mrus\033[1;00m/\033[1;94meng\033[1;00m): '
@@ -111,9 +115,3 @@ else:
     main()
 
 driver.quit()
-
-print(
-    '\nIf SUCCESSFUL you will find scan results in \033[1;94mlightshot_scan_results.txt\033[1;00m\n'
-)
-print('Elapsed time is: \033[1;92m{}\033[1;00m seconds\n'.format(
-    format((time.time() - start), '.2f')))
