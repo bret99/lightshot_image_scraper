@@ -1,7 +1,7 @@
 import urllib.request
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 import pytesseract
 from PIL import Image
 import random
@@ -66,7 +66,7 @@ def main():
             image = driver.find_element_by_xpath(
                 '/html/body/div[3]/div/div/img')
             download = image.get_attribute('src')
-        except NoSuchElementException:
+        except (NoSuchElementException, TimeoutException):
             print("Element not found")
         try:
             urllib.request.urlretrieve(download, 'image.png')
