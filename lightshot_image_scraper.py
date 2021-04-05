@@ -79,15 +79,21 @@ def main():
         for secret in secrets_list:
             if secret in scan_result:
                 print(
-                    "[] \033[1;91mFOUND on \033[1;93m'https://prnt.sc/{0}'\033[1;91m! It is \033[1;92m{1}\033[1;00m"
-                    .format(link, secret))
+                    "[{0}/{1}] \033[1;91mFOUND on \033[1;93m'https://prnt.sc/{2}'\033[1;91m! It is \033[1;92m{3}\033[1;00m"
+                    .format(
+                        links_list.index(link) + 1, links_list.__len__(), link,
+                        secret))
                 os.system(
-                    "echo '[] Secret FOUND on https://prnt.sc/{0}! It is {1}' >> lightshot_scan_results.txt"
-                    .format(link, secret))
+                    "echo '[{0}/{1}] Secret FOUND on https://prnt.sc/{2}! It is {3}' >> lightshot_scan_results.txt"
+                    .format(
+                        links_list.index(link) + 1, links_list.__len__(), link,
+                        secret))
             elif secret not in scan_result:
                 print(
-                    '[] \033[1;94m{0}\033[1;00m not found on "https://prnt.sc/{1}"'
-                    .format(secret, link))
+                    '[{0}/{1}] \033[1;94m{2}\033[1;00m not found on "https://prnt.sc/{3}"'
+                    .format(
+                        links_list.index(link) + 1, links_list.__len__(),
+                        secret, link))
         print(
             "\n=================================================================================================================\n"
         )
