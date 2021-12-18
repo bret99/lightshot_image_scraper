@@ -1,4 +1,4 @@
-This a simple tesseract based tool for investigating Lightshot images to find some secrets.
+This a tesseract based tool for investigating Lightshot images to find some secrets.
 One need some pre-installed dependencies:
 
 1. python3 modules => pytesseract pillow random selenium;
